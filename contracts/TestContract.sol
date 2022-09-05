@@ -16,7 +16,8 @@ contract TestContract {
         message = initialMessage;
     }
     
-    function setMessage(string memory newMessage) public {
+    function setMessage(string memory newMessage) public payable {
+        require(msg.value >= 10000000000000000);
         message = newMessage;
     }
 
